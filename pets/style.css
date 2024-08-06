@@ -1,0 +1,490 @@
+/* --------------------------FONTS---------------------------------- */
+
+@font-face {
+  font-family: "GeorgiaRegular";
+  src: url("../fonts/Georgia/GeorgiaRegular/GeorgiaRegular.eot");
+  src: url("../fonts/Georgia/GeorgiaRegular/GeorgiaRegular.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/Georgia/GeorgiaRegular/GeorgiaRegular.woff") format("woff"),
+    url("../fonts/Georgia/GeorgiaRegular/GeorgiaRegular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "GeorgiaBold";
+  src: url("../fonts/Georgia/GeorgiaBold/GeorgiaBold.eot");
+  src: url("../fonts/Georgia/GeorgiaBold/GeorgiaBold.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/Georgia/GeorgiaBold/GeorgiaBold.woff") format("woff"),
+    url("../fonts/Georgia/GeorgiaBold/GeorgiaBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "GeorgiaItalic";
+  src: url("../fonts/Georgia/GeorgiaItalic/GeorgiaItalic.eot");
+  src: url("../fonts/Georgia/GeorgiaItalic/GeorgiaItalic.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/Georgia/GeorgiaItalic/GeorgiaItalic.woff") format("woff"),
+    url("../fonts/Georgia/GeorgiaItalic/GeorgiaItalic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Arial';
+  src: local('Arial Italic'), local('Arial-Italic'),
+    url('Arial-ItalicMT.woff2') format('woff2'),
+    url('Arial-ItalicMT.woff') format('woff'),
+    url('Arial-ItalicMT.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Arial';
+  src: local('Arial Regular'), local('Arial-Regular'),
+    url('ArialMT.woff2') format('woff2'),
+    url('ArialMT.woff') format('woff'),
+    url('ArialMT.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ----------------------Обнуление--------------------------------- */
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll;
+  font-family: GeorgiaRegular;
+  scroll-behavior: smooth;
+}
+
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizespeed;
+  line-height: 1.5;
+  background-color: grey;
+}
+
+ul[class] {
+  list-style: none;
+}
+
+ol[class] {
+  list-style: none;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  outline: none;
+}
+
+button {
+  padding: 0;
+  color: inherit;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+/* --------------------------------- */
+
+
+
+.wrapper {
+  min-height: 100%;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container {
+  margin: 0 40px;
+}
+
+
+/* -------------Header------------------- */
+
+.grey {
+  color: #545454;
+}
+
+.white {
+  color: #292929;
+}
+
+.wrapper {
+  min-height: 100%;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container {
+  margin: 0 40px;
+}
+
+.header {
+  font-family: Arial, Regular;
+  font-size: 15px;
+  background-color: white;
+}
+
+.header__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 40px;
+}
+
+.menu {
+  display: flex;
+}
+
+.menu>*:not(:last-child) {
+  margin-right: 30px;
+}
+
+.header-text {
+  font-family: GeorgiaRegular;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  color: #545454;
+}
+
+.header-subtext {
+  margin-top: 10px;
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+
+.header__title div {
+  max-width: 186px;
+  width: 100%;
+}
+
+.menu__item-link,
+.menu-change {
+  transition: 0.5s linear;
+}
+
+.menu__item-link:hover {
+  color: red;
+  border-bottom: 3px solid #F1CDB3;
+  cursor: pointer;
+}
+
+.menu-change:hover {
+  border-bottom: 3px solid #F1CDB3;
+}
+
+/* ----------friends------------------- */
+
+.friends {
+  background-color: #F6F6F6;
+}
+
+.friends_wrapper {
+  padding: 80px 40px 100px;
+}
+
+.general-title {
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #545454;
+  font-family: GeorgiaRegular;
+}
+
+.friends_title {
+  text-align: center;
+}
+
+.friends_body {
+  margin-top: 45px;
+}
+
+.friends_body-first {
+  display: flex;
+  justify-content: space-between;
+}
+
+.friends_body-second {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.friends-items {
+  border-radius: 9px;
+  max-width: 270px;
+  width: 100%;
+  padding-bottom: 30px;
+  background-color: #FAFAFA;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.friends-items>*:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.friends-items_text {
+  font-size: 17px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  font-family: GeorgiaRegular;
+}
+
+.friends-items_btn {
+  border: 2px solid #F1CDB3;
+  border-radius: 100px;
+  padding: 15px 45px;
+  width: 191px;
+  height: 52px;
+}
+
+.friends-items_button {
+  font-family: GeorgiaRegular;
+  font-size: 17px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+}
+
+.friends-items:hover {
+  background-color: grey;
+  color: white;
+  cursor: pointer;
+}
+
+.friends-items {
+  transition: 1s linear;
+}
+
+
+/* --------friends_footer------------ */
+
+
+.friends_footer{
+margin-top: 45px;
+}
+
+.footer-oracle{
+  border-radius: 100px;
+  padding: 14px 21px;
+  width: 52px;
+  height: 52px;
+  border: 2px solid #CDCDCD;
+}
+
+.footer-oracle_change:hover{
+  cursor: pointer;
+}
+
+
+.footer-text{
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: #CDCDCD;
+}
+
+.footer-number{
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  text-align: center;
+  color: black;
+  position: relative;
+  left: -1px;
+  top: -3px;
+}
+
+.footer-oracle_number{
+  background-color: #F1CDB3;
+}
+
+.footer-oracle_change{
+  border: 2px solid #F1CDB3;
+  color: black;
+}
+
+.friends_footer-content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-arrleft{
+  position: relative;
+  left: -2px;
+  top: -2px;
+  color: #CDCDCD;
+} 
+
+.footer-arrlefts{
+  position: relative;
+  left: -6px;
+  top: -2px;
+  color: #CDCDCD;
+}
+
+.footer-arrright{
+  position: relative;
+  left: 0px;
+  top: -2px;
+} 
+
+.footer-arrrights{
+  position: relative;
+  left: -4px;
+  top: -2px;
+}
+
+/* --------------------footer----------------------- */
+
+
+.footer{
+  padding: 40px 40px 0px;
+  background:  url(/images/footer-background.png),radial-gradient(549.89% 73.65% at 5.73% 50%, rgb(81, 61, 47) 0%, rgb(26, 26, 28) 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.footer-left_colummn{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 235px;
+  max-width: 320px;
+  width: 100%;
+  margin: 16px 0px 60px;
+}
+
+.footer-left_title{
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: white;
+}
+
+.footer-left_mail,.footer-left_tel{
+  display: flex;
+  align-items: center;
+}
+
+.footer-mail_pictyre,.footer-tel_pictyre{
+  margin-right: 20px;
+}
+
+.footer-general{
+  color: #F1CDB3;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+}
+
+.footer-body{
+  display: flex;
+}
+
+.footer-body{
+  display: flex;
+  justify-content: space-between;
+}
+
+.increase:hover{
+  font-size: 22px;
+}

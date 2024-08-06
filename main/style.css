@@ -1,0 +1,643 @@
+/* --------------------------FONTS---------------------------------- */
+
+@font-face { 
+    font-family: "GeorgiaRegular";
+    src: url("../fonts/Georgia/GeorgiaRegular/GeorgiaRegular.eot");
+    src: url("../fonts/Georgia/GeorgiaRegular/GeorgiaRegular.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/Georgia/GeorgiaRegular/GeorgiaRegular.woff") format("woff"),
+    url("../fonts/Georgia/GeorgiaRegular/GeorgiaRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+@font-face { 
+    font-family: "GeorgiaBold";
+    src: url("../fonts/Georgia/GeorgiaBold/GeorgiaBold.eot");
+    src: url("../fonts/Georgia/GeorgiaBold/GeorgiaBold.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/Georgia/GeorgiaBold/GeorgiaBold.woff") format("woff"),
+    url("../fonts/Georgia/GeorgiaBold/GeorgiaBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
+@font-face { 
+    font-family: "GeorgiaItalic";
+    src: url("../fonts/Georgia/GeorgiaItalic/GeorgiaItalic.eot");
+    src: url("../fonts/Georgia/GeorgiaItalic/GeorgiaItalic.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/Georgia/GeorgiaItalic/GeorgiaItalic.woff") format("woff"),
+    url("../fonts/Georgia/GeorgiaItalic/GeorgiaItalic.ttf") format("truetype");
+    font-style: italic;
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'Arial';
+    src: local('Arial Italic'), local('Arial-Italic'),
+        url('Arial-ItalicMT.woff2') format('woff2'),
+        url('Arial-ItalicMT.woff') format('woff'),
+        url('Arial-ItalicMT.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'Arial';
+    src: local('Arial Regular'), local('Arial-Regular'),
+        url('ArialMT.woff2') format('woff2'),
+        url('ArialMT.woff') format('woff'),
+        url('ArialMT.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  /* ----------------------Обнуление--------------------------------- */
+
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  html {
+    overflow-y: scroll;
+    font-family: GeorgiaRegular;
+    scroll-behavior: smooth;
+  }
+  
+  ul[class],
+  ol[class] {
+    padding: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  ul[class],
+  ol[class],
+  li,
+  figure,
+  figcaption,
+  blockquote,
+  dl,
+  dd {
+    margin: 0;
+  }
+
+  ul,
+ol,
+li {
+	list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: inherit;
+	font-size: inherit;
+}
+  
+  
+  body {
+    min-height: 100vh;
+    text-rendering: optimizespeed;
+    line-height: 1.5;
+    background-color: grey;
+  }
+  
+  ul[class]{
+    list-style: none;
+  }
+  
+  ol[class]  {
+    list-style: none;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+  
+  a:not([class]) {
+    text-decoration-skip-ink: auto;
+  }
+  
+  img {
+    display: block;
+    max-width: 100%;
+  }
+  
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+    outline: none;
+  }
+  
+  button {
+    padding: 0;
+    color: inherit;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+  }
+
+
+  .headWrapper{
+    background:  url(/images/start-screen-background.jpg),radial-gradient(237.5% 111.8% at 0% 0%, rgb(91, 72, 58) 0%, rgb(38, 36, 37) 100%);
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: 908px;
+  }
+
+  /* ------------------Header----------------- */
+
+  .grey{
+    color:#CDCDCD;
+  }
+  .white{
+    color: white;
+  }
+  .wrapper{
+    min-height: 100%;
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .container{
+    margin: 0 40px;
+  }
+
+  .header{
+    font-family: Arial, Regular;
+    font-size: 15px;
+  }
+
+  .header__title{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+  }
+
+  .menu{
+    display: flex;
+  }
+
+  .menu>*:not(:last-child) {
+    margin-right: 30px;
+  }
+
+  .header-text{
+    font-family: GeorgiaRegular;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: #F1CDB3;
+  }
+
+  .header-subtext{
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-align: center;
+  }
+
+  .header__title div{
+    max-width:186px;
+    width: 100%;
+  }
+
+  .menu__item-link, .menu-change {
+    transition: 0.5s linear;
+  }
+
+  .menu__item-link:hover{
+    color: red;
+    border-bottom: 3px solid black;
+    cursor: pointer;
+  }
+
+  .menu-change:hover{
+    border-bottom: 3px solid black;
+  }
+
+  /* -------------NotOnly--------------------- */
+
+
+.not_Only-row{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 90px;
+}
+
+.not_Only-left{
+  margin-top: 163px;
+  max-width: 460px;
+  width: 100%;
+}
+
+.not_Only-title{
+  font-family: GeorgiaRegular;
+  font-size: 44px;
+  line-height: 130%;
+}
+
+.not_Only-text{
+  font-family: Arial, Regular;
+  font-size: 15px;
+  line-height: 160%;
+}
+
+.not_Only-button{
+  background-color: #F1CDB3;
+  border-radius: 100px;
+  padding: 15px 45px;
+  width: 208px;
+  height: 52px;
+}
+
+.not_Only-btn{
+  font-family: GeorgiaRegular;
+  font-size: 17px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+}
+
+.not_Only-left>*:not(:last-child) {
+  margin-bottom: 42px;
+}
+
+.header-text{
+  transition: 1s linear;
+}
+.header-text:hover{
+  color: grey;
+}
+
+.not_Only-button:hover{
+  background-color: black;
+  color: red;
+}
+
+.not_Only-button{
+  transition: 1s linear;
+}
+/* -----------------ABOUT------------------------- */
+
+.general-title{
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #545454;
+  font-family: GeorgiaRegular;
+}
+
+.about{
+  background-color: white;
+  padding: 80px 0px 100px 215px;
+}
+
+
+.about-row{
+  display: flex;
+}
+
+.about-rigth{
+  max-width: 430px;
+  width: 100%;
+  margin-left: 120px;
+}
+
+.about-text{
+  font-family: Arial, Regular;
+  font-size: 15px;
+  line-height: 160%;
+  color: #4C4C4C;
+}
+
+.about-rigth>*:not(:last-child) {
+  margin-bottom: 25px;
+}
+
+.about__title{
+  max-width: 370px;
+  width: 100%;
+}
+
+/* ----------Ours_Friends---------------------- */
+
+.friends-info{
+  padding: 80px 40px 100px 40px;
+  background-color: #F6F6F6;
+}
+
+.friends-items{
+  border-radius: 9px;
+  max-width: 270px;
+  width: 100%;
+  padding-bottom: 30px;
+  background-color: #FAFAFA;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.friends-items>*:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.friends-items_text{
+  font-size: 17px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  font-family: GeorgiaRegular;
+}
+
+.friends-items_btn{
+  border: 2px solid #F1CDB3;
+  border-radius: 100px;
+  padding: 15px 45px;
+  width: 191px;
+  height: 52px;
+}
+
+.friends-items_button{
+  font-family: GeorgiaRegular;
+  font-size: 17px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+}
+
+.friends-title{
+  text-align: center;
+}
+
+.friends-body{
+  margin-top: 60px;
+}
+
+.friends_wrapper{
+  display: flex;
+  justify-content: space-between;
+}
+
+.arrow-general{
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  border: 2px solid #F1CDB3;
+}
+
+.arrow-picture{
+  position: relative;
+  left: 16px;
+  top: 20px;
+}
+
+.friends-body{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.friends_wrapper>*:not(:last-child) {
+  margin-right: 90px;
+}
+
+.friends-btn{
+  display: block;
+  margin: 0 auto;
+  margin-top: 60px;
+  background-color: #F1CDB3;
+  border-radius: 100px;
+  padding: 15px 45px;
+  width: 264px;
+  height: 52px;
+}
+
+.friends-button{
+  display: flex;
+  justify-content: center;
+  font-family: GeorgiaRegular;
+  font-size: 17px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+}
+
+.friends-items:hover{
+background-color: black;
+color: red;
+cursor: pointer;
+}
+
+.friends-items{
+  transition: 1s linear;
+}
+
+.friends-btn:hover{
+  background-color: black;
+  color: red;
+}
+
+.friends-btn{
+  transition: 1s linear;
+}
+/* ------------------Help---------------- */
+
+.help{
+  background-color: white;
+  padding: 80px 40px 100px;
+}
+
+.help-title{
+  text-align: center;
+}
+
+.help-item{
+  height: 113px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.help-item_first{
+  padding-left: 87px;
+}
+
+.help-body_first{
+  display: flex;
+  gap: 120px;
+  margin-top: 60px;
+}
+
+.help-item_text{
+  font-family: GeorgiaRegular;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+
+.help-item_img{
+  display: flex;
+  justify-content: center;
+}
+
+.help-body_second{
+  display: flex;
+  margin-top: 55px;
+  gap: 120px;
+}
+
+.help-item_second{
+  padding-left: 171px;
+}
+
+.additional-card:hover{
+  background-color: grey;
+}
+
+.additional-card{
+  transition: 1s linear;
+}
+
+/* ---------Addition------------- */
+
+.addition{
+  display: flex;
+  background-color: #F6F6F6;
+  padding: 80px 182px 100px 182px;
+}
+
+.addition_right-column{
+  max-width: 380px;
+  width: 100%;
+}
+
+.addition-images{
+  margin-right: 30px;
+}
+
+.additional-subtitle{
+  color: #545454;
+  font-family: GeorgiaRegular;
+  font-size: 15px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+}
+
+.additional-card{
+  display: flex;
+  align-items: center;
+  border-radius: 9px;
+  padding: 10px 15px;
+  width: 352px;
+  height: 43px;
+  background-color: #F1CDB3;
+}
+
+.additional-card_numbers{
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+}
+
+.additional-card_images{
+  margin-right: 15px;
+}
+
+.additional-text{
+  font-family: Arial Italic;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: #B2B2B2;
+}
+
+.addition_right-column>*:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+/* ---------Footer------------------------- */
+
+.footer{
+  padding: 40px 40px 0px;
+  background:  url(/images/footer-background.png),radial-gradient(549.89% 73.65% at 5.73% 50%, rgb(81, 61, 47) 0%, rgb(26, 26, 28) 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.footer-left_colummn{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 235px;
+  max-width: 320px;
+  width: 100%;
+  margin: 16px 0px 60px;
+}
+
+.footer-left_title{
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: white;
+}
+
+.footer-left_mail,.footer-left_tel{
+  display: flex;
+  align-items: center;
+}
+
+.footer-mail_pictyre,.footer-tel_pictyre{
+  margin-right: 20px;
+}
+
+.footer-general{
+  color: #F1CDB3;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+}
+
+.footer-body{
+  display: flex;
+}
+
+.footer-body{
+  display: flex;
+  justify-content: space-between;
+}
+
+.increase:hover{
+  font-size: 22px;
+}
