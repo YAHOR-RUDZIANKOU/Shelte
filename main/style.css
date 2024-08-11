@@ -175,10 +175,15 @@ button {
   background: url(/images/start-screen-background.jpg), radial-gradient(237.5% 111.8% at 0% 0%, rgb(91, 72, 58) 0%, rgb(38, 36, 37) 100%);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 908px;
+  min-height: 823px;
+  height: 100%;
 }
 
 /* ------------------Header----------------- */
+
+.menu__item-burger {
+  display: none;
+}
 
 .grey {
   color: #CDCDCD;
@@ -545,6 +550,7 @@ button {
 
 .addition {
   display: flex;
+  align-items: center;
   background-color: #F6F6F6;
   padding: 80px 182px 100px 182px;
 }
@@ -660,17 +666,35 @@ button {
 
 .not_Only-rigth {
   background-image: url('/images/start-screen-puppy.png');
-  width: 698px;
+  max-width: 698px;
+  width: 100%;
   height: 728px;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-/* ---------------------------Media(768px)---------------------------- */
+/* ---------------------------MEDIA(768px)---------------------------- */
 
 @media(max-width:768px) {
 
-  /* ----------HEADER------- */
+  /* -----------ABOUT------------------------------- */
+
+  .additional-text {
+    font-size: 13px;
+  }
+
+  .not_Only-title {
+    font-size: 25px;
+    margin-right: 285px;
+  }
+
+
+  .not_Only-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
   .container {
     margin: 0 30px;
@@ -687,11 +711,8 @@ button {
   }
 
   .not_Only-button {
-    margin-left: 125px;
-  }
-
-  .headWrapper {
-    height: 1077px;
+    display: flex;
+    justify-content: center;
   }
 
   .not_Only-rigth {
@@ -702,31 +723,6 @@ button {
     height: 500px;
     width: 569px;
   }
-
-  /* -----------ABOUT------------------------------- */
-
-  .about-row {
-    flex-wrap: wrap;
-    flex-direction: column-reverse;
-    align-items: center;
-  }
-
-  .about {
-    padding: 80px 0px 100px;
-  }
-
-  .about-rigth {
-    margin-left: 0;
-  }
-
-  .about-left {
-    margin-top: 80px;
-  }
-
-  .footer-right_picture {
-    margin: 0 auto;
-  }
-
 }
 
 @media(max-width:1000px) {
@@ -756,12 +752,41 @@ button {
 
   .addition {
     flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
   }
 
   .addition-images {
     margin-top: 60px;
   }
 
+  /* -------------------------ABOUT-------------------------------- */
+
+  .about-row {
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .about {
+    padding: 80px 0px 100px;
+  }
+
+  .about-rigth {
+    margin-left: 0;
+  }
+
+  .about-left {
+    margin-top: 80px;
+  }
+
+  .footer-right_picture {
+    margin: 0 auto;
+  }
+
+  .about-text {
+    text-align: justify;
+  }
 
 }
 
@@ -785,5 +810,255 @@ button {
   .help-body_first {
     margin-top: 55px;
     gap: 60px;
+    justify-content: center;
+  }
+
+
+  .not_Only-row {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 0px;
+  }
+
+  .not_Only-left {
+    margin-top: 60px;
+  }
+
+  .not_Only-rigth {
+    margin-top: 40px;
+  }
+
+}
+
+@media(max-width:570px) {
+
+  .not_Only-rigth {
+    background-image: url('/images/thirdVariant.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 260px;
+    width: 270px;
+  }
+
+  .headWrapper {
+    min-height: 728px;
+  }
+
+  .not_Only-title {
+    text-align: center;
+    margin-right: 0px;
+  }
+}
+
+@media(max-width:320px) {
+  .not_Only-text {
+    max-width: 300px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .container {
+    margin: 0px;
+  }
+
+  .header_container {
+    margin: 0 20px;
+  }
+
+  .friends-info {
+    padding: 42px 10px;
+  }
+
+  .friends-body {
+    margin-top: 42px;
+  }
+
+  .general-title {
+    font-size: 25px;
+    text-align: center;
+  }
+
+}
+
+@media(max-width:455px) {
+  .about {
+    padding: 25px;
+  }
+
+  .about-text {
+    text-align: justify;
+  }
+
+  .arrow-general {
+    display: block;
+  }
+
+  .friends-body {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .arrow-left {
+    margin: 0 80px 0 0;
+  }
+
+  .arrow-right {
+
+    margin: 0px;
+  }
+
+  .friends_wrapper {
+    order: 1;
+    margin-bottom: 20px;
+  }
+
+  .arrow-left {
+    order: 2;
+  }
+
+  .arrow-right {
+    order: 2;
+  }
+
+}
+
+@media(max-width:720px) {
+
+  .friends_noneSEC {
+    display: none;
+  }
+
+  .help {
+    padding: 0;
+  }
+
+  .help-body_first {
+    margin: 42px 12px 0px;
+    padding-bottom: 42px;
+  }
+
+  .help-title {
+    padding-top: 42px;
+  }
+
+  .help-item {
+    max-width: 118px;
+    width: 100%;
+  }
+
+  .help-item_text {
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+  }
+
+
+
+  .footer-body {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* ----------HEADER------- */
+
+  .menu__item {
+    display: none;
+  }
+
+  .menu__item-burger {
+    display: block;
+  }
+}
+
+@media((min-width:571px)and(max-width:720px)) {
+  .help-items_last {
+    margin-right: 0px;
+  }
+}
+
+@media(max-width:498px) {
+  .help-items_last {
+    margin-right: 167px;
+  }
+
+  .footer-left_title {
+    font-size: 25px;
+    text-align: center;
+  }
+
+  .footer {
+    padding: 30px 10px 0px;
+  }
+
+  .footer-left_colummn {
+    align-items: center;
+    margin: 0 0 40px 0;
+  }
+
+  .footer-left_tel {
+    position: relative;
+  }
+
+  .footer-tel_pictyreChange {
+    position: relative;
+    bottom: 0px;
+    left: -13px;
+  }
+
+  .increaseChange {
+    position: relative;
+    bottom: 0px;
+    left: -13px;
+  }
+
+}
+
+@media(max-width:925px) {
+
+  .additional-title {
+    font-size: 25px;
+    text-align: center;
+  }
+
+  .additional-text {
+    max-width: 278px;
+    width: 100%;
+    text-align: justify;
+    line-height: 150%;
+    height: 90px;
+  }
+
+  .addition {
+    padding: 42px 20px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .addition-title {
+    text-align: center;
+
+  }
+
+  .additional-card_numbers {
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+  }
+
+  .additional-card {
+    width: 281px;
+    height: 43px;
+  }
+
+  .additional-subtitle {
+    font-size: 15px;
+    line-height: 160%;
+    margin-left: 13px;
+    font-size: 13px;
+  }
+
+  .addition_right-column {
+    max-width: 280px;
+    width: 100%;
   }
 }
