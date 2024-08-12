@@ -181,9 +181,9 @@ button {
   margin: 0 auto;
 }
 
-.container {
+/* .container {
   margin: 0 40px;
-}
+} */
 
 
 /* -------------Header------------------- */
@@ -202,10 +202,10 @@ button {
   width: 100%;
   margin: 0 auto;
 }
-
+/* 
 .container {
   margin: 0 40px;
-}
+} */
 
 .header {
   font-family: Arial, Regular;
@@ -291,21 +291,9 @@ button {
   margin-top: 45px;
 }
 
-.friends_body-first {
-  display: flex;
-  justify-content: space-between;
-}
-
-.friends_body-second {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 30px;
-}
-
 .friends-items {
   border-radius: 9px;
-  max-width: 270px;
-  width: 100%;
+  width: 270px;
   padding-bottom: 30px;
   background-color: #FAFAFA;
   display: flex;
@@ -349,12 +337,22 @@ button {
   transition: 1s linear;
 }
 
+.friends_body{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.friends_body>*:not(:last-child) {
+  margin-bottom: 30px;
+}
+
 
 /* --------friends_footer------------ */
 
 
 .friends_footer{
-margin-top: 45px;
+margin-top: 15px;
 }
 
 .footer-oracle{
