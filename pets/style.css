@@ -339,20 +339,18 @@ button {
 
 .friends_body{
   display: flex;
-  justify-content: space-between;
+  gap: 40px;
   flex-wrap: wrap;
 }
 
-.friends_body>*:not(:last-child) {
-  margin-bottom: 30px;
-}
+
 
 
 /* --------friends_footer------------ */
 
 
 .friends_footer{
-margin-top: 15px;
+margin-top: 45px;
 }
 
 .footer-oracle{
@@ -485,4 +483,13 @@ margin-top: 15px;
 
 .increase:hover{
   font-size: 22px;
+}
+
+
+
+
+/* -----------Adaptive different windows (768px 320px and another )--------------------- */
+
+@media(max-width:1220px){
+  
 }
