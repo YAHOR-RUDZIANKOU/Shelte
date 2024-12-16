@@ -3,7 +3,8 @@
 @font-face {
   font-family: "GeorgiaRegular";
   src: url("../fonts/Georgia/GeorgiaRegular/GeorgiaRegular.eot");
-  src: url("../fonts/Georgia/GeorgiaRegular/GeorgiaRegular.eot?#iefix")format("embedded-opentype"),
+  src: url("../fonts/Georgia/GeorgiaRegular/GeorgiaRegular.eot?#iefix")
+      format("embedded-opentype"),
     url("../fonts/Georgia/GeorgiaRegular/GeorgiaRegular.woff") format("woff"),
     url("../fonts/Georgia/GeorgiaRegular/GeorgiaRegular.ttf") format("truetype");
   font-style: normal;
@@ -13,7 +14,8 @@
 @font-face {
   font-family: "GeorgiaBold";
   src: url("../fonts/Georgia/GeorgiaBold/GeorgiaBold.eot");
-  src: url("../fonts/Georgia/GeorgiaBold/GeorgiaBold.eot?#iefix")format("embedded-opentype"),
+  src: url("../fonts/Georgia/GeorgiaBold/GeorgiaBold.eot?#iefix")
+      format("embedded-opentype"),
     url("../fonts/Georgia/GeorgiaBold/GeorgiaBold.woff") format("woff"),
     url("../fonts/Georgia/GeorgiaBold/GeorgiaBold.ttf") format("truetype");
   font-style: normal;
@@ -23,7 +25,8 @@
 @font-face {
   font-family: "GeorgiaItalic";
   src: url("../fonts/Georgia/GeorgiaItalic/GeorgiaItalic.eot");
-  src: url("../fonts/Georgia/GeorgiaItalic/GeorgiaItalic.eot?#iefix")format("embedded-opentype"),
+  src: url("../fonts/Georgia/GeorgiaItalic/GeorgiaItalic.eot?#iefix")
+      format("embedded-opentype"),
     url("../fonts/Georgia/GeorgiaItalic/GeorgiaItalic.woff") format("woff"),
     url("../fonts/Georgia/GeorgiaItalic/GeorgiaItalic.ttf") format("truetype");
   font-style: italic;
@@ -31,21 +34,20 @@
 }
 
 @font-face {
-  font-family: 'Arial';
-  src: local('Arial Italic'), local('Arial-Italic'),
-    url('Arial-ItalicMT.woff2') format('woff2'),
-    url('Arial-ItalicMT.woff') format('woff'),
-    url('Arial-ItalicMT.ttf') format('truetype');
+  font-family: "Arial";
+  src: local("Arial Italic"), local("Arial-Italic"),
+    url("/fonts/Arial/ArialMT.woff2") format("woff2"),
+    url("/fonts/Arial/Arial-ItalicMT.woff") format("woff"),
+    url("/fonts/Arial/Arial-ItalicMT.ttf") format("truetype");
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'Arial';
-  src: local('Arial Regular'), local('Arial-Regular'),
-    url('ArialMT.woff2') format('woff2'),
-    url('ArialMT.woff') format('woff'),
-    url('ArialMT.ttf') format('truetype');
+  font-family: "Arial";
+  src: local("Arial Regular"), local("Arial-Regular"),
+    url("/fonts/Arial/ArialMT.woff2") format("woff2"), url("/fonts/Arial/ArialMT.woff") format("woff"),
+    url("/fonts/Arial/ArialMT.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
@@ -72,9 +74,10 @@ a {
 }
 
 html {
-  overflow-y: scroll;
   font-family: GeorgiaRegular;
-  scroll-behavior: smooth;
+  /* для плавной прокрутки по якорям */
+  scroll-behavior: smooth; 
+  /* для плавной прокрутки по якорям */
 }
 
 ul[class],
@@ -120,12 +123,12 @@ h6 {
   font-size: inherit;
 }
 
-
 body {
   min-height: 100vh;
   text-rendering: optimizespeed;
   line-height: 1.5;
   background-color: grey;
+  overflow-y: auto;
 }
 
 ul[class] {
@@ -170,9 +173,13 @@ button {
   border: none;
 }
 
-
 .headWrapper {
-  background: url(/images/start-screen-background.jpg), radial-gradient(237.5% 111.8% at 0% 0%, rgb(91, 72, 58) 0%, rgb(38, 36, 37) 100%);
+  background: url(/images/start-screen-background.jpg),
+    radial-gradient(
+      237.5% 111.8% at 0% 0%,
+      rgb(91, 72, 58) 0%,
+      rgb(38, 36, 37) 100%
+    );
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 823px;
@@ -181,12 +188,17 @@ button {
 
 /* ------------------Header----------------- */
 
-.menu__item-burger {
+.burger__line {
+  width: 30px;
+  border: 1px solid #f1cdb3;
+}
+
+.menu__burger {
   display: none;
 }
 
 .grey {
-  color: #CDCDCD;
+  color: #cdcdcd;
 }
 
 .white {
@@ -220,7 +232,7 @@ button {
   display: flex;
 }
 
-.menu>*:not(:last-child) {
+.menu > *:not(:last-child) {
   margin-right: 30px;
 }
 
@@ -230,7 +242,7 @@ button {
   font-size: 32px;
   line-height: 110%;
   letter-spacing: 0.06em;
-  color: #F1CDB3;
+  color: #f1cdb3;
 }
 
 .header-subtext {
@@ -243,7 +255,7 @@ button {
 
 .header__title div {
   max-width: 186px;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .menu__item-link,
@@ -262,7 +274,6 @@ button {
 }
 
 /* -------------NotOnly--------------------- */
-
 
 .not_Only-row {
   display: flex;
@@ -289,7 +300,7 @@ button {
 }
 
 .not_Only-button {
-  background-color: #F1CDB3;
+  background-color: #f1cdb3;
   border-radius: 100px;
   padding: 15px 45px;
   width: 208px;
@@ -303,7 +314,7 @@ button {
   letter-spacing: 0.06em;
 }
 
-.not_Only-left>*:not(:last-child) {
+.not_Only-left > *:not(:last-child) {
   margin-bottom: 42px;
 }
 
@@ -339,7 +350,6 @@ button {
   padding: 80px 0px 100px 215px;
 }
 
-
 .about-row {
   display: flex;
 }
@@ -354,10 +364,10 @@ button {
   font-family: Arial, Regular;
   font-size: 15px;
   line-height: 160%;
-  color: #4C4C4C;
+  color: #4c4c4c;
 }
 
-.about-rigth>*:not(:last-child) {
+.about-rigth > *:not(:last-child) {
   margin-bottom: 25px;
 }
 
@@ -370,7 +380,7 @@ button {
 
 .friends-info {
   padding: 80px 40px 100px 40px;
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
 }
 
 .friends-items {
@@ -378,13 +388,13 @@ button {
   max-width: 270px;
   width: 100%;
   padding-bottom: 30px;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.friends-items>*:not(:last-child) {
+.friends-items > *:not(:last-child) {
   margin-bottom: 30px;
 }
 
@@ -396,7 +406,7 @@ button {
 }
 
 .friends-items_btn {
-  border: 2px solid #F1CDB3;
+  border: 2px solid #f1cdb3;
   border-radius: 100px;
   padding: 15px 45px;
   width: 191px;
@@ -427,7 +437,7 @@ button {
   width: 50px;
   height: 50px;
   border-radius: 100px;
-  border: 2px solid #F1CDB3;
+  border: 2px solid #f1cdb3;
 }
 
 .arrow-picture {
@@ -442,7 +452,7 @@ button {
   align-items: center;
 }
 
-.friends_wrapper>*:not(:last-child) {
+.friends_wrapper > *:not(:last-child) {
   margin-right: 90px;
 }
 
@@ -450,7 +460,7 @@ button {
   display: block;
   margin: 0 auto;
   margin-top: 60px;
-  background-color: #F1CDB3;
+  background-color: #f1cdb3;
   border-radius: 100px;
   padding: 15px 45px;
   width: 264px;
@@ -551,7 +561,7 @@ button {
 .addition {
   display: flex;
   align-items: center;
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
   padding: 80px 182px 100px 182px;
 }
 
@@ -579,7 +589,7 @@ button {
   padding: 10px 15px;
   width: 352px;
   height: 43px;
-  background-color: #F1CDB3;
+  background-color: #f1cdb3;
 }
 
 .additional-card_numbers {
@@ -598,10 +608,10 @@ button {
   font-weight: 400;
   font-size: 12px;
   line-height: 150%;
-  color: #B2B2B2;
+  color: #b2b2b2;
 }
 
-.addition_right-column>*:not(:last-child) {
+.addition_right-column > *:not(:last-child) {
   margin-bottom: 20px;
 }
 
@@ -609,7 +619,12 @@ button {
 
 .footer {
   padding: 40px 40px 0px;
-  background: url(/images/footer-background.png), radial-gradient(549.89% 73.65% at 5.73% 50%, rgb(81, 61, 47) 0%, rgb(26, 26, 28) 100%);
+  background: url(/images/footer-background.png),
+    radial-gradient(
+      549.89% 73.65% at 5.73% 50%,
+      rgb(81, 61, 47) 0%,
+      rgb(26, 26, 28) 100%
+    );
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -644,7 +659,7 @@ button {
 }
 
 .footer-general {
-  color: #F1CDB3;
+  color: #f1cdb3;
   font-size: 20px;
   line-height: 115%;
   letter-spacing: 0.06em;
@@ -665,7 +680,7 @@ button {
 }
 
 .not_Only-rigth {
-  background-image: url('/images/start-screen-puppy.png');
+  background-image: url("/images/start-screen-puppy.png");
   max-width: 698px;
   width: 100%;
   height: 728px;
@@ -675,9 +690,24 @@ button {
 
 /* ---------------------------MEDIA(768px)---------------------------- */
 
-@media(max-width:768px) {
-
+@media (max-width: 768px) {
   /* -----------ABOUT------------------------------- */
+
+  .menu__item:not(:last-child) {
+    display: none;
+  }
+
+  .menu__burger {
+    position: absolute;
+    top: 45px;
+    right: 20px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.5s linear;
+    
+  }
 
   .additional-text {
     font-size: 13px;
@@ -687,7 +717,6 @@ button {
     font-size: 25px;
     margin-right: 285px;
   }
-
 
   .not_Only-left {
     display: flex;
@@ -717,7 +746,7 @@ button {
 
   .not_Only-rigth {
     margin-top: 100px;
-    background-image: url('/images/secondVariant.png');
+    background-image: url("/images/secondVariant.png");
     background-repeat: no-repeat;
     background-size: cover;
     height: 500px;
@@ -725,8 +754,7 @@ button {
   }
 }
 
-@media(max-width:1000px) {
-
+@media (max-width: 1000px) {
   /* ---------FRIEND--------------- */
   .friends-items_none {
     display: none;
@@ -736,7 +764,7 @@ button {
     gap: 40px;
   }
 
-  .friends_wrapper>*:not(:last-child) {
+  .friends_wrapper > *:not(:last-child) {
     margin-right: 0px;
   }
 
@@ -787,11 +815,9 @@ button {
   .about-text {
     text-align: justify;
   }
-
 }
 
-@media(max-width:1200px) {
-
+@media (max-width: 1200px) {
   /* --------Help---------- */
 
   .help-item_second {
@@ -813,7 +839,6 @@ button {
     justify-content: center;
   }
 
-
   .not_Only-row {
     flex-wrap: wrap;
     justify-content: center;
@@ -827,13 +852,11 @@ button {
   .not_Only-rigth {
     margin-top: 40px;
   }
-
 }
 
-@media(max-width:570px) {
-
+@media (max-width: 570px) {
   .not_Only-rigth {
-    background-image: url('/images/thirdVariant.png');
+    background-image: url("/images/thirdVariant.png");
     background-repeat: no-repeat;
     background-size: cover;
     height: 260px;
@@ -850,7 +873,7 @@ button {
   }
 }
 
-@media(max-width:320px) {
+@media (max-width: 320px) {
   .not_Only-text {
     max-width: 300px;
     width: 100%;
@@ -877,10 +900,9 @@ button {
     font-size: 25px;
     text-align: center;
   }
-
 }
 
-@media(max-width:455px) {
+@media (max-width: 455px) {
   .about {
     padding: 25px;
   }
@@ -903,7 +925,6 @@ button {
   }
 
   .arrow-right {
-
     margin: 0px;
   }
 
@@ -919,11 +940,9 @@ button {
   .arrow-right {
     order: 2;
   }
-
 }
 
-@media(max-width:720px) {
-
+@media (max-width: 720px) {
   .friends_noneSEC {
     display: none;
   }
@@ -952,31 +971,21 @@ button {
     letter-spacing: 0.06em;
   }
 
-
-
   .footer-body {
     flex-direction: column;
     align-items: center;
   }
 
   /* ----------HEADER------- */
-
-  .menu__item {
-    display: none;
-  }
-
-  .menu__item-burger {
-    display: block;
-  }
 }
 
-@media((min-width:571px)and(max-width:720px)) {
+@media ((min-width: 571px)and(max-width:720px)) {
   .help-items_last {
     margin-right: 0px;
   }
 }
 
-@media(max-width:498px) {
+@media (max-width: 498px) {
   .help-items_last {
     margin-right: 167px;
   }
@@ -1010,11 +1019,9 @@ button {
     bottom: 0px;
     left: -13px;
   }
-
 }
 
-@media(max-width:925px) {
-
+@media (max-width: 925px) {
   .additional-title {
     font-size: 25px;
     text-align: center;
@@ -1036,7 +1043,6 @@ button {
 
   .addition-title {
     text-align: center;
-
   }
 
   .additional-card_numbers {
@@ -1062,3 +1068,92 @@ button {
     width: 100%;
   }
 }
+
+/* ------------Burger Menu Start-------------- */
+
+.burger__wrapper{
+  min-width: 320px;
+  min-height: 100vh;
+  background: #292929;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  transition: transform 0.5s linear;
+}
+
+.burger__nav{
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* ----------Class to be added------------------ */
+
+.burger__active{
+  transform: rotateX(0);
+}
+
+.menu__burger-change {
+  transform: rotate(90deg);
+  position: fixed;
+  top: 45px;
+  right: 20px;
+  z-index: 100;
+}
+
+/* --------------------------------------------- */
+
+.burger__link-inactive:hover {
+  color: #CDCDCD; 
+}
+
+.burger__link{
+  position: relative;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 160%;
+  color: #CDCDCD;
+  transition: 1s linear;
+}
+
+.burger__link::after {
+  content: ''; 
+  position: absolute;
+  left: 0;
+  bottom: -4px; 
+  width: 0px; 
+  height: 2px; 
+  background-color: white; 
+  transition: width 0.9s linear;
+}
+
+.burger__interactive{
+  color: red;
+}
+
+.burger__interactive::after{
+  width: 100%;
+}
+
+.burger__hidden{
+  overflow-y: hidden;
+}
+
+.hidden{
+  visibility: hidden;
+}
+
+.fon__garknes{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(128, 128, 128, 0.5);
+}
+
+/* ------------Burger Menu End-------------------- */
