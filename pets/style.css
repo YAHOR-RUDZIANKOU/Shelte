@@ -3,8 +3,7 @@
 @font-face {
   font-family: "GeorgiaRegular";
   src: url("../fonts/Georgia/GeorgiaRegular/GeorgiaRegular.eot");
-  src: url("../fonts/Georgia/GeorgiaRegular/GeorgiaRegular.eot?#iefix")format("embedded-opentype"),
-    url("../fonts/Georgia/GeorgiaRegular/GeorgiaRegular.woff") format("woff"),
+  src: url("../fonts/Georgia/GeorgiaRegular/GeorgiaRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/Georgia/GeorgiaRegular/GeorgiaRegular.woff") format("woff"),
     url("../fonts/Georgia/GeorgiaRegular/GeorgiaRegular.ttf") format("truetype");
   font-style: normal;
   font-weight: 400;
@@ -13,8 +12,7 @@
 @font-face {
   font-family: "GeorgiaBold";
   src: url("../fonts/Georgia/GeorgiaBold/GeorgiaBold.eot");
-  src: url("../fonts/Georgia/GeorgiaBold/GeorgiaBold.eot?#iefix")format("embedded-opentype"),
-    url("../fonts/Georgia/GeorgiaBold/GeorgiaBold.woff") format("woff"),
+  src: url("../fonts/Georgia/GeorgiaBold/GeorgiaBold.eot?#iefix") format("embedded-opentype"), url("../fonts/Georgia/GeorgiaBold/GeorgiaBold.woff") format("woff"),
     url("../fonts/Georgia/GeorgiaBold/GeorgiaBold.ttf") format("truetype");
   font-style: normal;
   font-weight: 700;
@@ -23,29 +21,24 @@
 @font-face {
   font-family: "GeorgiaItalic";
   src: url("../fonts/Georgia/GeorgiaItalic/GeorgiaItalic.eot");
-  src: url("../fonts/Georgia/GeorgiaItalic/GeorgiaItalic.eot?#iefix")format("embedded-opentype"),
-    url("../fonts/Georgia/GeorgiaItalic/GeorgiaItalic.woff") format("woff"),
+  src: url("../fonts/Georgia/GeorgiaItalic/GeorgiaItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Georgia/GeorgiaItalic/GeorgiaItalic.woff") format("woff"),
     url("../fonts/Georgia/GeorgiaItalic/GeorgiaItalic.ttf") format("truetype");
   font-style: italic;
   font-weight: normal;
 }
 
 @font-face {
-  font-family: 'Arial';
-  src: local('Arial Italic'), local('Arial-Italic'),
-    url('Arial-ItalicMT.woff2') format('woff2'),
-    url('Arial-ItalicMT.woff') format('woff'),
-    url('Arial-ItalicMT.ttf') format('truetype');
+  font-family: "Arial";
+  src: local("Arial Italic"), local("Arial-Italic"), url("/fonts/Arial/ArialMT.woff2") format("woff2"), url("/fonts/Arial/Arial-ItalicMT.woff") format("woff"),
+    url("/fonts/Arial/Arial-ItalicMT.ttf") format("truetype");
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'Arial';
-  src: local('Arial Regular'), local('Arial-Regular'),
-    url('ArialMT.woff2') format('woff2'),
-    url('ArialMT.woff') format('woff'),
-    url('ArialMT.ttf') format('truetype');
+  font-family: "Arial";
+  src: local("Arial Regular"), local("Arial-Regular"), url("/fonts/Arial/ArialMT.woff2") format("woff2"), url("/fonts/Arial/ArialMT.woff") format("woff"),
+    url("/fonts/Arial/ArialMT.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
@@ -120,7 +113,6 @@ h6 {
   font-size: inherit;
 }
 
-
 body {
   min-height: 100vh;
   text-rendering: optimizespeed;
@@ -172,8 +164,6 @@ button {
 
 /* --------------------------------- */
 
-
-
 .wrapper {
   min-height: 100%;
   max-width: 1280px;
@@ -182,6 +172,15 @@ button {
 }
 
 /* -------------Header------------------- */
+
+.burger__line {
+  width: 30px;
+  border: 1px solid #f1cdb3;
+}
+
+.menu__burger {
+  display: none;
+}
 
 .grey {
   color: #545454;
@@ -197,7 +196,6 @@ button {
   width: 100%;
   margin: 0 auto;
 }
-
 
 .header {
   font-family: Arial, Regular;
@@ -216,12 +214,7 @@ button {
   display: flex;
 }
 
-.menu__item-burger {
-  display: none;
-}
-
-
-.menu>*:not(:last-child) {
+.menu > *:not(:last-child) {
   margin-right: 30px;
 }
 
@@ -244,7 +237,7 @@ button {
 
 .header__title div {
   max-width: 186px;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .menu__item-link,
@@ -254,18 +247,18 @@ button {
 
 .menu__item-link:hover {
   color: red;
-  border-bottom: 3px solid #F1CDB3;
+  border-bottom: 3px solid #f1cdb3;
   cursor: pointer;
 }
 
 .menu-change:hover {
-  border-bottom: 3px solid #F1CDB3;
+  border-bottom: 3px solid #f1cdb3;
 }
 
 /* ----------friends------------------- */
 
 .friends {
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
 }
 
 .friends_wrapper {
@@ -284,21 +277,17 @@ button {
   text-align: center;
 }
 
-.friends_body {
-  margin-top: 45px;
-}
-
 .friends-items {
   border-radius: 9px;
   width: 270px;
   padding-bottom: 30px;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.friends-items>*:not(:last-child) {
+.friends-items > *:not(:last-child) {
   margin-bottom: 30px;
 }
 
@@ -310,7 +299,7 @@ button {
 }
 
 .friends-items_btn {
-  border: 2px solid #F1CDB3;
+  border: 2px solid #f1cdb3;
   border-radius: 100px;
   padding: 15px 45px;
   width: 191px;
@@ -340,94 +329,46 @@ button {
   flex-wrap: wrap;
 }
 
+/* ----------------------------Paginaion------------ */
 
-
-
-/* --------friends_footer------------ */
-
-
-.friends_footer {
-  margin-top: 45px;
+.friends_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
 }
 
-.footer-oracle {
+.friends__pagination {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.friends__pagination button {
+  position: relative;
   border-radius: 100px;
   padding: 14px 21px;
   width: 52px;
   height: 52px;
-  border: 2px solid #CDCDCD;
+  border: 2px solid #f1cdb3;
 }
 
-.footer-oracle_change:hover {
-  cursor: pointer;
+.friends__pagination span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.active__border {
+  border: 2px solid #f1cdb3;
+}
+
+.noActive__border {
+  border: 2px solid #cdcdcd !important
 }
 
 
-.footer-text {
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 115%;
-  letter-spacing: 0.06em;
-  color: #CDCDCD;
-}
-
-.footer-number {
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 115%;
-  letter-spacing: 0.06em;
-  text-align: center;
-  color: black;
-  position: relative;
-  left: -1px;
-  top: -3px;
-}
-
-.footer-oracle_number {
-  background-color: #F1CDB3;
-}
-
-.footer-oracle_change {
-  border: 2px solid #F1CDB3;
-  color: black;
-}
-
-.friends_footer-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-
-.footer-arrleft {
-  position: relative;
-  left: -2px;
-  top: -2px;
-  color: #CDCDCD;
-}
-
-.footer-arrlefts {
-  position: relative;
-  left: -6px;
-  top: -2px;
-  color: #CDCDCD;
-}
-
-.footer-arrright {
-  position: relative;
-  left: 0px;
-  top: -2px;
-}
-
-.footer-arrrights {
-  position: relative;
-  left: -4px;
-  top: -2px;
-}
 
 /* --------------------footer----------------------- */
-
-
 .footer {
   padding: 40px 40px 0px;
   background: url(/images/footer-background.png), radial-gradient(549.89% 73.65% at 5.73% 50%, rgb(81, 61, 47) 0%, rgb(26, 26, 28) 100%);
@@ -465,7 +406,7 @@ button {
 }
 
 .footer-general {
-  color: #F1CDB3;
+  color: #f1cdb3;
   font-size: 20px;
   line-height: 115%;
   letter-spacing: 0.06em;
@@ -485,36 +426,32 @@ button {
   font-size: 22px;
 }
 
-/* -----------Adaptive different windows (768px 320px and another )--------------------- */
+/* ------------------Adaptive different windows (768px 320px and another )--------------------- */
 
-@media(max-width:1279px) {
+@media (max-width: 1279px) {
   .friends_body {
     justify-content: center;
   }
 }
-@media(max-width:720px) {
+
+@media (max-width: 720px) {
   .footer-body {
     flex-direction: column;
     align-items: center;
   }
-  .menu__item {
-    display: none;
-  }
-  .menu__item-burger {
-    display: block;
-  }
+
   .header__title {
     padding: 30px 20px;
   }
 }
 
-@media(max-width:1020px) {
+@media (max-width: 1020px) {
   .footer-body {
     justify-content: center;
   }
 }
 
-@media(max-width:658px) {
+@media (max-width: 658px) {
   .friends_title {
     font-size: 25px;
     line-height: 130%;
@@ -523,13 +460,9 @@ button {
   .friends_wrapper {
     padding: 42px 10px;
   }
-  .friends_footer-content {
-    gap: 10px;
-  }
 }
 
-@media(max-width:498px) {
-
+@media (max-width: 498px) {
   .footer-left_colummn {
     align-items: center;
     margin: 0 0 40px 0;
@@ -540,5 +473,40 @@ button {
   }
   .footer {
     padding: 30px 10px 0px;
+  }
+}
+
+@media (max-width: 768px) {
+  .friends_wrapper {
+    padding: 60px 30px 70px;
+    gap: 35px;
+  }
+  .menu__item {
+    display: none;
+  }
+  .menu__burger {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .friends_body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .friends__pagination {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 320px) {
+  .friends_wrapper {
+    padding: 42px 10px;
   }
 }
