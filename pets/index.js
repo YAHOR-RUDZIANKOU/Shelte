@@ -1,5 +1,4 @@
 // -----------------------Pagination Start--------------------
-
 const twoLeftArrow = document.querySelector(".two__arrawLeft");
 const oneLeftArrow = document.querySelector(".one__arrowLeft");
 const oneRightArrow = document.querySelector(".one__arrorRight");
@@ -40,10 +39,10 @@ const Card = [
   { id: "8", imageURL: "/images/pets-freddie.png", title: "Freddie", button: "Learn more" },
 ];
 
-// Дублируем данные
+// Дублируем и перемешиваем данные
 let newCardData = [...shuffleArray(Card), ...shuffleArray(Card), ...shuffleArray(Card), ...shuffleArray(Card), ...shuffleArray(Card), ...shuffleArray(Card)];
 
-
+// Функция, принимающая массив и кол-во карточек на странице соответственно, возвращает массив, в котором каждая карточка из диапазона, размером каждые n элементов, не повторяется 
 function checkArray(arr, n) {
   let result = [];
   let currentArr = [];
@@ -58,40 +57,47 @@ function checkArray(arr, n) {
       }
     }
     if (currentArr.length === n) {
-      console.log(currentArr)
-      console.log('aaaaaaaaaaa')
       currentArr = [];
     }
   }
 
-
   return result;
 }
 
+// Нахождения массива под определенное кол-во видимых карточек (ПОСЛЕДНИЙ ПУНКТ ИЗ-ЗА ЭТОГО НЕ ВЫПОЛНЯЕТСЯ 
+// https://github.com/rolling-scopes-school/tasks/blob/master/tasks/shelter/shelter-part3.md)
+let resultAllCard=checkArray(newCardData, 8);
+let resultMidCard=checkArray(newCardData, 6);
+let resultSmallCard=checkArray(newCardData, 3);
 
-// ------------------------------------------
-function changArray(){
-  let resultArray = checkArray(newCardData, countCard());
-  return resultArray;
+// showResultArray - в зависимости от кол-ва карточек, возвращает определенный массив
+function showResultArray(){
+  let numbCard=countCard();
+  if(numbCard===8){
+    return resultAllCard;
+  }else if(numbCard===6){
+    return resultMidCard;
+  }else{
+    return resultSmallCard;
+  }
 }
 
-// displayList - отображает пагинацию
-// currentPagesPar - текущая страница
+// displayList - реализация пагинации в зависимости от переданных параметров 1) arr массив, который будет обрабатываться; 2) countCardPar - кол-ва карточек;3) currentPagesPar - текущая страница
 function displayList(arr, countCardPar, currentPagesPar) {
   const friendsBody = document.querySelector(".friends_body");
   const start = (currentPagesPar - 1) * countCardPar;
   const end = start + countCardPar;
-  console.log(start);
-  console.log(end);
+  // console.log(start);
+  // console.log(end);
   const pagArr = arr.slice(start, end);
-  console.log(pagArr);
+  // console.log(pagArr);
   for (let i = 0; i < countCardPar; i++) {
     let curentElement = pagArr[i];
     createElement(friendsBody, curentElement);
   }
 }
 
-// функция создает карточки
+// createElement - функция, которая создает карточки
 function createElement(friendsBodyPar, curentElementPar) {
   const friendsWrap = document.createElement("div");
   friendsWrap.classList.add("friends-items");
@@ -120,26 +126,21 @@ function createElement(friendsBodyPar, curentElementPar) {
   friendsBodyPar.appendChild(friendsWrap);
 }
 
-// checkCountCard - проверяет количество карточек в зависимости от ширины экрана
+// resetAndDisplay - функция будет вызываться при каждом изменении экрана
+function resetAndDisplay() {
+  document.querySelector(".friends_body").innerHTML = "";
+  displayList(showResultArray(), countCard(), 1);
+  currentNumber.innerText = "";
+  currentNumber.innerText = 1;
+  isPenultimateRight();
+  firstPositionLeft()
+}
+
 function checkCountCard() {
   let cardNumber = countCard();
-  if(cardNumber===8){
-    document.querySelector(".friends_body").innerHTML = "";
-    displayList(changArray(), cardNumber, 1);
-  }else if(cardNumber===6){
-    document.querySelector(".friends_body").innerHTML = "";
-    displayList(changArray(), cardNumber, 1);
-  }else{
-    document.querySelector(".friends_body").innerHTML = "";
-    displayList(changArray(), cardNumber, 1);
+  if(cardNumber === 8 || cardNumber === 6 || cardNumber !== 8) {
+    resetAndDisplay();
   }
-  // let child = Array.from(document.querySelector(".friends_body").children);
-  // if (cardNumber !== child.length) {
-  //   document.querySelector(".friends_body").innerHTML = "";
-  //   displayList(changArray(), countCard(), 1);
-  // } else {
-  //   return;
-  // }
 }
 // при изменении ширины окна браузера, срабатывается функция checkCountCard
 window.addEventListener("resize", checkCountCard);
@@ -156,10 +157,11 @@ function showPagLast() {
   return +curentPag - 1;
 }
 
+
 moveRight = function () {
   let pageNext = showPagNext();
   document.querySelector(".friends_body").innerHTML = "";
-  displayList(changArray(), countCard(), pageNext);
+  displayList(showResultArray(), countCard(), pageNext);
   currentNumber.innerText = "";
   currentNumber.innerText = pageNext;
   let maxPages = newCardData.length / countCard();
@@ -176,6 +178,10 @@ moveRight = function () {
 moveLeft = function () {
   let maxPages = newCardData.length / countCard();
   let pageLast = showPagLast();
+  document.querySelector(".friends_body").innerHTML = "";
+  displayList(showResultArray(), countCard(), pageLast);
+  currentNumber.innerText = "";
+  currentNumber.innerText = pageLast;
   // проверка на предпоследнюю  страницу
   if (pageLast === maxPages - 1) {
     isPenultimateRight();
@@ -184,10 +190,6 @@ moveLeft = function () {
   if (pageLast === 1) {
     firstPositionLeft();
   }
-  document.querySelector(".friends_body").innerHTML = "";
-  displayList(changArray(), countCard(), pageLast);
-  currentNumber.innerText = "";
-  currentNumber.innerText = pageLast;
 };
 
 // левые кнопки становятся неактивными и добавляется специальный класс noActive__border
@@ -226,7 +228,7 @@ oneRightArrow.addEventListener("click", moveRight);
 oneLeftArrow.addEventListener("click", moveLeft);
 
 document.addEventListener("DOMContentLoaded", () => {
-  displayList(changArray(), countCard(), 1);
+  displayList(showResultArray(), countCard(), 1);
   // при создании DOM дерева, левая кнопка сразу будет неактивной
   firstPositionLeft();
 });
@@ -234,7 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // при нажатии на двойную левую стрелку
 twoLeftArrow.addEventListener("click", () => {
   document.querySelector(".friends_body").innerHTML = "";
-  displayList(changArray(), countCard(), 1);
+  displayList(showResultArray(), countCard(), 1);
   currentNumber.innerText = "";
   currentNumber.innerText = 1;
   isPenultimateRight();
@@ -245,7 +247,7 @@ twoLeftArrow.addEventListener("click", () => {
 twoRightArrow.addEventListener("click", () => {
   let maxPages = newCardData.length / countCard();
   document.querySelector(".friends_body").innerHTML = "";
-  displayList(changArray(), countCard(), maxPages);
+  displayList(showResultArray(), countCard(), maxPages);
   currentNumber.innerText = "";
   currentNumber.innerText = maxPages;
   isLastRight();
